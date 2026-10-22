@@ -184,7 +184,6 @@ It uses the container runtime on `SYSTEM_COMPUTE_POOL_CPU` and needs a PyPI exte
 
 ## Known limitations
 
-- **CLASSIFICATION is broken on this account.** `SNOWFLAKE.ML.CLASSIFICATION` fails with "must have an active version defined", even on a toy table as ACCOUNTADMIN. The claim classifier therefore runs as a Snowpark Python stored procedure (scikit-learn gradient boosting) in the warehouse.
 - **The classifier score is unrealistically high.** Holdout AUC is about 0.9999, because seeded synthetic patterns are separable by construction. Present it as a demonstration of the workflow, not of expected real-world accuracy.
 - **Employer risk is not a Dynamic Table.** The WHD and OSHA source tables belong to other demo roles and have change tracking off, so employer risk is rebuilt by a procedure on a weekly task.
 - **ITA underreporting (P7) is conservative.** It needs 20+ NAICS peers, an injury rate under 40% of the peer median, and serious citations or a fatality.

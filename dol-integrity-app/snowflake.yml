@@ -1,0 +1,23 @@
+definition_version: "2"
+
+entities:
+  DOL_FRAUD_PREVENTION_APP:
+    type: snowflake-app
+    identifier:
+      name: DOL_FRAUD_PREVENTION_APP
+      database: DOL_FRAUD_DEMO
+      schema: APP
+    artifacts:
+      - src: ./*
+        dest: ./
+        ignore:
+          - node_modules
+          - .env*
+          - __pycache__
+          - "*.pyc"
+          - .next
+          - .git
+          - snowflake.log
+
+    query_warehouse: DOL_FRAUD_WH
+    code_stage: DOL_FRAUD_PREVENTION_APP_CODE

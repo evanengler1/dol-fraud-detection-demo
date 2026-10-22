@@ -1,0 +1,47 @@
+# Light theme matching the DOL Fraud Detection and Prevention Command Center:
+# near-white canvas, white cards, navy brand, teal secondary, amber alert.
+
+[server]
+enableStaticServing = true
+
+[theme]
+base = "light"
+primaryColor = "#0b2545"
+backgroundColor = "#fafafa"
+secondaryBackgroundColor = "#f4f4f5"
+textColor = "#0a0a0a"
+linkColor = "#0e7c7b"
+borderColor = "#eaeaea"
+showWidgetBorder = true
+baseRadius = "0.5rem"
+font = "Inter"
+codeFont = "JetBrains Mono"
+chartCategoricalColors = ["#0b2545", "#0e7c7b", "#d97706", "#6b6b70"]
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/Inter-Regular.ttf"
+weight = 400
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/Inter-Medium.ttf"
+weight = 500
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/Inter-SemiBold.ttf"
+weight = 600
+
+[[theme.fontFaces]]
+family = "Inter"
+url = "app/static/Inter-Bold.ttf"
+weight = 700
+
+[[theme.fontFaces]]
+family = "JetBrains Mono"
+url = "app/static/JetBrainsMono-Regular.ttf"
+weight = 400
+
+[theme.sidebar]
+backgroundColor = "#ffffff"

@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/*
+ * DOL Fraud Detection and Prevention: light-only design tokens.
+ * Near-white canvas, white cards, hairline borders, navy brand, teal secondary, amber alert.
+ */
+
+@layer base {
+  :root {
+    --background: #fafafa;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #0b2545;
+    --primary-foreground: #ffffff;
+    --secondary: #f4f4f5;
+    --secondary-foreground: #0a0a0a;
+    --muted: #f4f4f5;
+    --muted-foreground: #6b6b70;
+    --accent: #f4f4f5;
+    --accent-foreground: #0a0a0a;
+    --destructive: #b91c1c;
+    --destructive-foreground: #ffffff;
+    --border: #eaeaea;
+    --input: #eaeaea;
+    --ring: #0b2545;
+    --radius: 12px;
+
+    --navy: #0b2545;
+    --navy-600: #13315c;
+    --teal: #0e7c7b;
+    --teal-50: #e7f4f3;
+    --amber: #d97706;
+    --amber-50: #fff7ea;
+    --red: #b42318;
+    --hair: #eaeaea;
+    --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-raise: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+    --shadow-pop: 0 0 0 1px rgb(0 0 0 / 0.04), 0 2px 4px rgb(0 0 0 / 0.04), 0 12px 24px -6px rgb(0 0 0 / 0.12),
+      0 32px 64px -12px rgb(0 0 0 / 0.14);
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-teal: var(--teal);
+  --color-amber: var(--amber);
+  --color-alert: var(--red);
+  --color-hair: var(--hair);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+  .mono {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+  }
+  svg path:focus,
+  svg g:focus {
+    outline: none !important;
+  }
+}
+
+@layer components {
+  .card {
+    background: var(--card);
+    border: 1px solid var(--hair);
+    border-radius: var(--radius);
+    transition: box-shadow 200ms var(--ease-std), border-color 200ms var(--ease-std);
+  }
+  .card-hover:hover {
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(0 0 0 / 0.1);
+    border-color: #e0e0e0;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+  .headline {
+    font-size: clamp(32px, 3.6vw, 48px);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+  }
+  .dot-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgb(11 37 69 / 0.14) 1px, transparent 0);
+    background-size: 18px 18px;
+    mask-image: radial-gradient(ellipse 80% 70% at 30% 0%, #000 30%, transparent 75%);
+  }
+  .hero-gradient {
+    background:
+      radial-gradient(40% 60% at 15% 10%, rgb(14 124 123 / 0.1), transparent 70%),
+      radial-gradient(35% 50% at 85% 0%, rgb(11 37 69 / 0.1), transparent 70%);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  .shimmer {
+    background: linear-gradient(90deg, #f2f2f0 0%, #fafaf8 40%, #f2f2f0 80%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+  }
+  .kbd {
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 11px;
+    border: 1px solid var(--hair);
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 0 5px;
+    min-width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--muted-foreground);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(2%, 1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

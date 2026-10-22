@@ -1,0 +1,24 @@
+definition_version: 2
+entities:
+  DOL_CREDIT_TRACKER:
+    type: streamlit
+    identifier:
+      name: DOL_CREDIT_TRACKER
+      database: DOL_FRAUD_DEMO
+      schema: COST
+    title: "DOL Fraud Demo Credit Tracker"
+    query_warehouse: DOL_FRAUD_WH
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    external_access_integrations:
+      - PYPI_ACCESS_INTEGRATION
+    main_file: streamlit_app.py
+    artifacts:
+      - streamlit_app.py
+      - pyproject.toml
+      - .streamlit/config.toml
+      - static/Inter-Regular.ttf
+      - static/Inter-Medium.ttf
+      - static/Inter-SemiBold.ttf
+      - static/Inter-Bold.ttf
+      - static/JetBrainsMono-Regular.ttf
